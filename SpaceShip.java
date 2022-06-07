@@ -14,6 +14,7 @@ public class SpaceShip extends Actor
      */
     private int targetx=0, targety=0;
     private int line =0;
+    
     //Calling Methods
     public void act()
     {
@@ -23,6 +24,10 @@ public class SpaceShip extends Actor
             targety=mouse.getY();
         }
         move();
+        if("space".equals(Greenfoot.getKey()))
+        {
+            fire(); 
+        }
         
     }
     // Movement through mouse
@@ -43,7 +48,18 @@ public class SpaceShip extends Actor
         }
         setLocation(posx,posy);
     }
-    public void addedToWorld(World MyWorld){
+    public void addedToWorld(World MyWorld)
+    {
         targetx=getX();targety=getY();
+    }
+    public void fire()
+    {
+        Bullets bullets = new Bullets();
+        getWorld().addObject(bullets, getX(), getY());
+        MyWorld world = (MyWorld) getWorld();
+        if(getX() >= world.getWidth())
+        {
+            world.removeObject(bullets);
+        }
     }
 }
