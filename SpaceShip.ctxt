@@ -9,4 +9,6 @@ comment3.params=MyWorld
 comment3.target=void\ addedToWorld(greenfoot.World)
 comment4.params=
 comment4.target=void\ fire()
-numComments=5
+comment5.params=
+comment5.target=void\ eat()
+numComments=6

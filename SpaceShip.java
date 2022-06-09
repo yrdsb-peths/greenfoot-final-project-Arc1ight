@@ -52,6 +52,7 @@ public class SpaceShip extends Actor
     {
         targetx=getX();targety=getY();
     }
+    //Added bullets
     public void fire()
     {
         Bullets bullets = new Bullets();
@@ -60,6 +61,15 @@ public class SpaceShip extends Actor
         if(getX() >= world.getWidth())
         {
             world.removeObject(bullets);
+        }
+    }
+    
+    public void eat()
+    {
+        if(isTouching(EnemyShip.class))
+        {
+            
+            
         }
     }
 }

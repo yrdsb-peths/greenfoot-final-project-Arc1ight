@@ -17,8 +17,7 @@ public class Bullets extends Actor
     public void addedToWorld(World MyWorld)
     {
         GreenfootImage image = new GreenfootImage(50,10);
-        image.drawLine(0,5,image.getWidth()-1,5);
-        setImage(image);
+        
     }
     public void act()
     {
