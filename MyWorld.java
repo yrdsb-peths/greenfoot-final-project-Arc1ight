@@ -21,6 +21,7 @@ public class MyWorld extends World
         Spaceship();
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel,50,50);
+        
     }
     public void Spaceship()
     {
@@ -30,7 +31,7 @@ public class MyWorld extends World
     public void Enemyship()
     {
         EnemyShip enemyship = new EnemyShip();
-        
+        addObject(enemyship, 300, 200);
         
     }
     public void increaseScore()

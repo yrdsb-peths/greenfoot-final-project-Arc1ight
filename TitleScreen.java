@@ -20,8 +20,8 @@ public class TitleScreen extends World
         prepare();
     }
     public void act(){
-        if(Greenfoot.isKeyDown("enter")){
-            MyWorld gameWorld = new MyWorld();
+        if(Greenfoot.isKeyDown("s")){
+            Controls gameWorld = new Controls();
             Greenfoot.setWorld(gameWorld);
         }
     }
@@ -30,7 +30,9 @@ public class TitleScreen extends World
     {
         SpaceLogo Logo = new SpaceLogo();
         addObject(Logo, 300, 100);
-
+        
+        Label startLabel = new Label("Press <s>", 40);
+        addObject(startLabel, 300, 300);
     }
 
     public void started(){
