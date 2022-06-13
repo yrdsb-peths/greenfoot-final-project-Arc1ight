@@ -14,6 +14,7 @@ public class SpaceShip extends Actor
      */
     private int targetx=0, targety=0;
     private int line =0;
+    MyWorld thisGame;
     
     //Calling Methods
     public void act()
@@ -28,7 +29,7 @@ public class SpaceShip extends Actor
         {
             fire(); 
         }
-        
+        hitEnemy();
     }
     // Movement through mouse
     public void move()
@@ -63,13 +64,19 @@ public class SpaceShip extends Actor
             world.removeObject(bullets);
         }
     }
-    
-    public void eat()
-    {
-        if(isTouching(EnemyShip.class))
+    public void hitEnemy(){
+        if (isTouching(EnemyShip.class))
         {
-            
-            
+            getWorld().addObject(new GameOver(), 300, 200);
+            getWorld().removeObject(this);
+            thisGame.score = 0;
+        }
+    }
+    public void hitEnemyBullets(){
+        if(isTouching(EnemyBullets.class)){
+            getWorld().addObject(new GameOver(), 300, 200);
+            getWorld().removeObject(this);
+            thisGame.score = 0;
         }
     }
 }

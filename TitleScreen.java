@@ -30,7 +30,7 @@ public class TitleScreen extends World
     {
         SpaceLogo Logo = new SpaceLogo();
         addObject(Logo, 300, 100);
-        
+
         Label startLabel = new Label("Press <s>", 40);
         addObject(startLabel, 300, 300);
     }

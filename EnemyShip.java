@@ -9,27 +9,37 @@ import greenfoot.World;
  */
 public class EnemyShip extends Actor
 {
-    int xPos;
-    int yPos;
-    int horzMove = 3;
-    int vertMove = 3;
-    /**
-     * Act - do whatever the EnemyShip wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    SimpleTimer shotTimer = new SimpleTimer();
+    MyWorld thisGame;
     public void act()
     {
-        int x = 390;
-        int y = getY()+ 2;
-        setLocation(x,y);
+        if (shotTimer.millisElapsed()> 2000)
+        {
+            getWorld().addObject(new EnemyBullets(), getX(), getY());
+            shotTimer.mark();
+        }
+        hitBullets();
+        move();
     }
     public void addedToWorld (World MyWorld)
     {
         setRotation(180);
     }
     public void move(){
-        xPos = getX();
-        yPos = getY();
+        move(1);
+    }
+    public void hitBullets()
+    {
+        Bullets b = (Bullets) getOneIntersectingObject(Bullets.class);
+        if (isTouching(Bullets.class))
+        {
+            getWorld().removeObject(b);
+            getWorld().removeObject(this);
+            thisGame.score++;
+            
+        
+        }
+
     }
     
 }
