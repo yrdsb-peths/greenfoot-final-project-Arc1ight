@@ -9,25 +9,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     SimpleTimer spawnTimer = new SimpleTimer();
-    int moveDelay = 0;
     public static int score= 0;
     private int timer = 200;
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
-    
+    //Call Methods
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1, false);
         Spaceship();
         shipSpawn();
-        
-        
-        
     }
-    public void act(){
+    // spawn time of enemies and calling win method
+    public void act()
+    {
         showText("Score; " + score, 50, 25);
         timer--;
         if (timer <= 0) {
@@ -38,8 +36,10 @@ public class MyWorld extends World
         }
         win();
     }
-    public void win(){
-        if (score >= 15)
+    // Win Screen and Method
+    public void win()
+    {
+        if (score >= 25)
         {
             YouWin win = new YouWin();
             addObject(win, 300, 200);
@@ -47,6 +47,7 @@ public class MyWorld extends World
             Greenfoot.stop();
         }
     }
+    
     public void shipSpawn(){
         Enemyship();
     }

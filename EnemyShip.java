@@ -11,6 +11,7 @@ public class EnemyShip extends Actor
 {
     SimpleTimer shotTimer = new SimpleTimer();
     MyWorld thisGame;
+    //Time of the enemy bullets and calling methods
     public void act()
     {
         if (shotTimer.millisElapsed()> 2000)
@@ -21,13 +22,16 @@ public class EnemyShip extends Actor
         hitBullets();
         move();
     }
+    //Flip the object 
     public void addedToWorld (World MyWorld)
     {
         setRotation(180);
     }
+    //Move the actor
     public void move(){
         move(1);
     }
+    //Remove Enemy actor if bullets hit and increase score
     public void hitBullets()
     {
         Bullets b = (Bullets) getOneIntersectingObject(Bullets.class);

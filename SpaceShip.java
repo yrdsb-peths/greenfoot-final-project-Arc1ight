@@ -13,12 +13,14 @@ public class SpaceShip extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int targetx=0, targety=0;
-    private int line =0;
+    private int line = 0;
+    private int timer = 200;
     MyWorld thisGame;
     
-    //Calling Methods
+    //Calling Methods, mouse movement and shooting 
     public void act()
     {
+        timer--;
         if(Greenfoot.mouseMoved(null)){
             MouseInfo mouse=Greenfoot.getMouseInfo();
             targetx=mouse.getX();
@@ -27,7 +29,10 @@ public class SpaceShip extends Actor
         move();
         if("space".equals(Greenfoot.getKey()))
         {
-            fire(); 
+            if(timer >= 0){
+                fire();
+            }
+            timer+= 200;
         }
         hitEnemy();
     }
@@ -64,19 +69,21 @@ public class SpaceShip extends Actor
             world.removeObject(bullets);
         }
     }
+    //remove actor if hit by enemy and play game over screen
     public void hitEnemy(){
         if (isTouching(EnemyShip.class))
         {
             getWorld().addObject(new GameOver(), 300, 200);
             getWorld().removeObject(this);
-            thisGame.score = 0;
+            
+            
         }
     }
     public void hitEnemyBullets(){
         if(isTouching(EnemyBullets.class)){
             getWorld().addObject(new GameOver(), 300, 200);
             getWorld().removeObject(this);
-            thisGame.score = 0;
+            
         }
     }
 }
