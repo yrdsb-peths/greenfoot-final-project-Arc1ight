@@ -69,7 +69,9 @@ public class SpaceShip extends Actor
             world.removeObject(bullets);
         }
     }
-    //remove actor if hit by enemy and play game over screen
+    /**
+     * remove actor if hit by enemy and play game over screen
+     */
     public void hitEnemy(){
         if (isTouching(EnemyShip.class))
         {

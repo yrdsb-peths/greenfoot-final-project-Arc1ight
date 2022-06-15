@@ -1,11 +1,17 @@
 #BlueJ class context
 comment0.target=Objective
-comment0.text=\r\n\ Objective\ of\ the\ game.\r\n\ \r\n\ @author\ Marco\ \r\n\ @version\ June\ 2022\r\n
+comment0.text=\r\n\ Explains\ the\ Objective\ of\ the\ game.\r\n\ \r\n\ @author\ Marco\ \r\n\ @version\ June\ 2022\r\n
 comment1.params=
 comment1.target=Objective()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Objective.\r\n\ \r\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Objective.\r\n\ Calls\ Methods\r\n
 comment2.params=
 comment2.target=void\ prepare()
+comment2.text=\r\n\ Create\ labels\ to\ explain\ objectives\r\n
 comment3.params=
 comment3.target=void\ act()
-numComments=4
+comment3.text=\r\n\ if\ 2\ is\ pressed,\ go\ to\ controls\ world\r\n
+comment4.params=
+comment4.target=void\ started()
+comment5.params=
+comment5.target=void\ stopped()
+numComments=6

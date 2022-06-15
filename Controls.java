@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- *  a description of  Controls here.
+ * Explains the main controls.
  * 
  * @author Marco 
  * @version June 2022
@@ -11,7 +11,7 @@ public class Controls extends World
 
     /**
      * Constructor for objects of class Controls.
-     * 
+     * Calls the methods
      */
     public Controls()
     {    
@@ -19,6 +19,9 @@ public class Controls extends World
         super(600, 400, 1); 
         prepare();
     }
+    /**
+     * Create labels to explain controls
+     */
     public void prepare(){
         Label controlLabel = new Label("Controls", 60);
         addObject(controlLabel, 300, 100);
@@ -30,10 +33,14 @@ public class Controls extends World
         addObject(enterLabel, 300, 250);
         
     }
+    /**
+     * If enter is pressed, go to MyWorld
+     */
     public void act(){
         if(Greenfoot.isKeyDown("enter")){
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld);
+            
         }
     }
 }

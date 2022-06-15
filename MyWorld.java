@@ -11,6 +11,7 @@ public class MyWorld extends World
     SimpleTimer spawnTimer = new SimpleTimer();
     public static int score= 0;
     private int timer = 200;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 

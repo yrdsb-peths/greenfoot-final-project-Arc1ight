@@ -11,6 +11,7 @@ comment4.params=
 comment4.target=void\ fire()
 comment5.params=
 comment5.target=void\ hitEnemy()
+comment5.text=\r\n\ remove\ actor\ if\ hit\ by\ enemy\ and\ play\ game\ over\ screen\r\n
 comment6.params=
 comment6.target=void\ hitEnemyBullets()
 numComments=7
