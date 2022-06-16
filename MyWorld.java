@@ -16,7 +16,9 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-    //Call Methods
+    /**
+     * Calling Methods
+     */
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -24,7 +26,9 @@ public class MyWorld extends World
         Spaceship();
         shipSpawn();
     }
-    // spawn time of enemies and calling win method
+    /**
+     * Creating Score and Calling Win Method
+     */
     public void act()
     {
         showText("Score; " + score, 50, 25);
@@ -37,7 +41,9 @@ public class MyWorld extends World
         }
         win();
     }
-    // Win Screen and Method
+    /**
+     * If score is 30 add win screen, reset score and stop game 
+     */ 
     public void win()
     {
         if (score >= 30)
