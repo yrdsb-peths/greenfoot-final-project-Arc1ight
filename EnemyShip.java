@@ -11,6 +11,7 @@ public class EnemyShip extends Actor
 {
     SimpleTimer shotTimer = new SimpleTimer();
     MyWorld thisGame;
+    GreenfootSound sound = new GreenfootSound("Explosion.mp3");
     //Time of the enemy bullets and calling methods
     public void act()
     {
@@ -40,6 +41,7 @@ public class EnemyShip extends Actor
             getWorld().removeObject(b);
             getWorld().removeObject(this);
             thisGame.score++;
+            sound.play();
             
         
         }

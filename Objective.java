@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Objective extends World
 {
-    GreenfootSound mainTwoSound = new GreenfootSound("Time.mp3");
+    
     /**
      * Constructor for objects of class Objective.
      * Calls Methods
@@ -18,6 +18,7 @@ public class Objective extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         prepare();
+        Greenfoot.playSound("Time.mp3");
     }
     /**
      * Create labels to explain objectives
@@ -25,7 +26,7 @@ public class Objective extends World
     public void prepare(){
         Label objectiveLabel = new Label("Objective", 60);
         addObject(objectiveLabel, 300, 100);
-        Label mainLabel = new Label("Main Objective: Get a score of 25" , 30);
+        Label mainLabel = new Label("Main Objective: Get a score of 30" , 30);
         addObject(mainLabel, 300, 150);
         Label shootLabel = new Label("Defeat enemies and survive, your score is saved", 30);
         addObject(shootLabel, 300, 200);
@@ -40,11 +41,5 @@ public class Objective extends World
             Controls gameWorld = new Controls();
             Greenfoot.setWorld(gameWorld);
         }
-    }
-    public void started(){
-        mainTwoSound.play();
-    }
-    public void stopped(){
-        mainTwoSound.stop();
     }
 }

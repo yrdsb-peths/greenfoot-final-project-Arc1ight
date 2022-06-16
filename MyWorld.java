@@ -40,7 +40,7 @@ public class MyWorld extends World
     // Win Screen and Method
     public void win()
     {
-        if (score >= 25)
+        if (score >= 30)
         {
             YouWin win = new YouWin();
             addObject(win, 300, 200);

@@ -15,6 +15,7 @@ public class SpaceShip extends Actor
     private int targetx=0, targety=0;
     private int line = 0;
     private int timer = 200;
+    GreenfootSound sound = new GreenfootSound("Explosion.mp3");
     MyWorld thisGame;
     
     //Calling Methods, mouse movement and shooting 
@@ -77,7 +78,7 @@ public class SpaceShip extends Actor
         {
             getWorld().addObject(new GameOver(), 300, 200);
             getWorld().removeObject(this);
-            
+            sound.play();
             
         }
     }
@@ -85,7 +86,7 @@ public class SpaceShip extends Actor
         if(isTouching(EnemyBullets.class)){
             getWorld().addObject(new GameOver(), 300, 200);
             getWorld().removeObject(this);
-            
+            sound.play();
         }
     }
 }
