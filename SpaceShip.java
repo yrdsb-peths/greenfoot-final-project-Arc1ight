@@ -31,8 +31,9 @@ public class SpaceShip extends Actor
         {
             if(timer >= 0){
                 fire();
+                timer += 200;
             }
-            timer+= 200;
+            
         }
         hitEnemy();
     }
@@ -78,7 +79,6 @@ public class SpaceShip extends Actor
             getWorld().addObject(new GameOver(), 300, 200);
             getWorld().removeObject(this);
             Greenfoot.playSound("Explosion+3.mp3");
-            
         }
     }
     public void hitEnemyBullets(){
@@ -86,7 +86,6 @@ public class SpaceShip extends Actor
             getWorld().addObject(new GameOver(), 300, 200);
             getWorld().removeObject(this);
             Greenfoot.playSound("Explosion+3 .mp3");
-            
         }
     }
 }

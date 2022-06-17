@@ -25,12 +25,14 @@ public class MyWorld extends World
         super(600, 400, 1, false);
         Spaceship();
         shipSpawn();
+        score = 0;
     }
     /**
      * Creating Score and Calling Win Method
      */
     public void act()
     {
+        
         showText("Score; " + score, 50, 25);
         timer--;
         if (timer <= 0) {
@@ -40,6 +42,7 @@ public class MyWorld extends World
             timer+= 100;
         }
         win();
+        
     }
     /**
      * If score is 30 add win screen, reset score and stop game 

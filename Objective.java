@@ -28,7 +28,7 @@ public class Objective extends World
         addObject(objectiveLabel, 300, 100);
         Label mainLabel = new Label("Main Objective: Get a score of 30" , 30);
         addObject(mainLabel, 300, 150);
-        Label shootLabel = new Label("Defeat enemies and survive, your score is saved", 30);
+        Label shootLabel = new Label("Defeat enemies and survive the space war", 30);
         addObject(shootLabel, 300, 200);
         Label enterLabel = new Label("Press 2 to continue", 30);
         addObject(enterLabel, 300, 250);
